@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>RAP TRIVIA</title>
+    <!--Link bootstrap for styling-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <!--Link style.css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+    <!--favicon-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/music-16-166613.png"
+    />
+  </head>
+
+  <body>
+    <!-- trivia header -->
+    <div class="jumbotron col-md-12 text-center">
+      <h1>RAP MUSIC TRIVIA</h1>
+    </div>
+
+    <!-- timer with start button  -->
+    <div class="col-md-12 text-center">
+      <button id="start" class="btn btn-dark start">START</button>
+    </div>
+
+    <div class="timer col-md-12 text-center" id="time-left">
+      <h2>TIME LEFT</h2>
+    </div>
+
+    <!-- quiz  -->
+    <div class="col-md-12 text-center">
+      <div id="quiz"></div>
+      <button id="submit" class="btn btn-dark start text-center">SUBMIT</button>
+      <div id="results"></div>
+    </div>
+
+    <!-- end html code -->
+
+    <!--Link jquery-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!--Link POPPER.js-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <!--Link bootstrap.js-->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Link GAME JS -->
+    <script src="assets/javascript/game.js"></script>
+  </body>
+</html>
