@@ -151,6 +151,7 @@ var quizContainer = document.getElementById("quiz");
 var resultsContainer = document.getElementById("results");
 var submitButton = document.getElementById("submit");
 var startButton = document.getElementById("start");
+var audio = new Audio("Juicy.mp3");
 
 //START BUTTON ----------------------------------------->
 // click the button to start the game
@@ -158,17 +159,20 @@ var startButton = document.getElementById("start");
 startButton.onclick = function() {
   //show questions on click
   showQuestions(rapQuestions, quizContainer);
-  //START A TIMER FOR 200 SECONDS
+  //START A TIMER FOR 180 SECONDS
+  $("#time-left").toggleClass("hide");
   $("#time-left").html("<h2>TIME LEFT</h2>");
-
-  var timeLeft = 200;
+  $("#start").attr("disabled", "disabled");
+  $("#submit").toggleClass("hide");
+  audio.play();
+  var timeLeft = 180;
   var interval = setInterval(function() {
     timeLeft--;
     $("#time-left").html("<h2> TIME LEFT: " + timeLeft + " SECONDS </h2>");
-    if (timeLeft === -1) {
-      alert("GAME OVER MAN");
+    if (timeLeft <= -0.1) {
+      alert("GAME OVER MAN \n click OK to restart");
       clearInterval(interval);
-      timeLeft = 200;
+      $("#quiz").empty();
     }
   }, 1000);
 
@@ -192,7 +196,7 @@ function showQuestions(questions, quizContainer) {
     for (letter in questions[i].answers) {
       // ...add an html radio button
       answers.push(
-        "<label>" +
+        "<label><h5>" +
           '<input type="radio" name="question' +
           i +
           '" value="' +
@@ -202,18 +206,20 @@ function showQuestions(questions, quizContainer) {
           ": " +
           questions[i].answers[letter] +
           "&nbsp;&nbsp;" +
-          "</label>"
+          "</h5></label>"
       );
     }
 
     // add this question and its answers to the output
     output.push(
-      '<div class="question">' +
+      '<div class="question"><h6>' +
+        (i + 1) +
+        "." +
         questions[i].question +
-        "</div>" +
+        "</h6></div>" +
         '<div class="answers">' +
         answers.join("") +
-        "</div>"
+        "</div><br>"
     );
   }
 
@@ -255,7 +261,17 @@ function showResults(questions, quizContainer, resultsContainer) {
   }
 
   // show number of correct answers out of total
-  resultsContainer.innerHTML = numCorrect + " out of " + questions.length;
+  var percentCorrect = (numCorrect / questions.length) * 100;
+  resultsContainer.append(
+    numCorrect +
+      " out of " +
+      questions.length +
+      " correct.     \n " +
+      +percentCorrect.toFixed(1) +
+      "% correct"
+  );
+  $("#submit").toggleClass("hide");
+  $("#time-left").toggleClass("hide");
 }
 
 // on submit, show results

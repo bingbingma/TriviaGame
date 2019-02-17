@@ -31,20 +31,27 @@
 
     <!-- timer with start button  -->
     <div class="col-md-12 text-center">
-      <button id="start" class="btn btn-dark start">START</button>
+      <button id="start" class="btn btn-light start">START</button>
     </div>
-
-    <div class="timer col-md-12 text-center" id="time-left">
-      <h2>TIME LEFT</h2>
+    <div class="row">
+      <div class="col-md-4 text-center"></div>
+      <div class="timer hide col-md-4 text-center" id="time-left">
+        <h2>TIME LEFT</h2>
+      </div>
+      <div class="col-md-4 text-center"></div>
     </div>
-
     <!-- quiz  -->
-    <div class="col-md-12 text-center">
-      <div id="quiz"></div>
-      <button id="submit" class="btn btn-dark start text-center">SUBMIT</button>
-      <div id="results"></div>
+    <div class="row">
+      <div class="col-md-2 text-center"></div>
+      <div class="col-md-8 text-center">
+        <div id="quiz"></div>
+        <div id="results"></div>
+        <button id="submit" class="btn btn-light submit hide text-center">
+          SUBMIT
+        </button>
+      </div>
+      <div class="col-md-2 text-center"></div>
     </div>
-
     <!-- end html code -->
 
     <!--Link jquery-->
