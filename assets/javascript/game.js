@@ -152,7 +152,7 @@ var resultsContainer = document.getElementById("results");
 var submitButton = document.getElementById("submit");
 var startButton = document.getElementById("start");
 var audio = new Audio("Juicy.mp3");
-
+var interval = "";
 //START BUTTON ----------------------------------------->
 // click the button to start the game
 
@@ -277,4 +277,5 @@ function showResults(questions, quizContainer, resultsContainer) {
 // on submit, show results
 submitButton.onclick = function() {
   showResults(rapQuestions, quizContainer, resultsContainer);
+  clearInterval(interval);
 };
