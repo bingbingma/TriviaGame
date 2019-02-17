@@ -29,7 +29,7 @@ body {
   font-size: 200%;
   font-weight: 500;
   background-color: goldenrod;
-  padding: auto;
+  width: 65%;
 }
 
 #results {
