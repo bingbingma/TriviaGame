@@ -151,6 +151,7 @@ var quizContainer = document.getElementById("quiz");
 var resultsContainer = document.getElementById("results");
 var submitButton = document.getElementById("submit");
 var startButton = document.getElementById("start");
+var resetButton = document.getElementById("restart");
 var audio = new Audio("Juicy.mp3");
 var interval = "";
 //START BUTTON ----------------------------------------->
@@ -278,4 +279,9 @@ function showResults(questions, quizContainer, resultsContainer) {
 submitButton.onclick = function() {
   showResults(rapQuestions, quizContainer, resultsContainer);
   clearInterval(interval);
+};
+
+// on restart, reload page
+resetButton.onclick = function() {
+  location.reload();
 };
