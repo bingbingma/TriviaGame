@@ -104,7 +104,7 @@ var rapQuestions = [
     correctAnswer: "B"
   },
   {
-    question: "Who repped the west coast but was actually from Brooklyn",
+    question: "Who repped the west coast but was actually from Harlem",
     answers: {
       A: "Notorious B.I.G.",
       B: "2PAC",
